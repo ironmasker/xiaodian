@@ -14,7 +14,7 @@
   No courses yet
 </ng-template>
 <br/>
-<img src="{{ imageUrl }}" />
+<!-- <img src="{{ imageUrl }}" /> -->
 <img [src]="imageUrl" />
 <br/>
 <table>
@@ -22,4 +22,9 @@
     <td [attr.colspan]="colspan">text goes here</td>
   </tr>
 </table>
-<div (click)="onDivClick($event)"><button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]=" isActive ? 'green':'white'" (click)="onSave($event)">Save</button></div>
+<div (click)="onDivClick()"><button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]=" isActive ? 'green':'white'" (click)="onSave($event)">Save</button></div>
+
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+<p>{{ message | summary:100 | cases }}</p>
+
+

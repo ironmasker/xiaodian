@@ -12,6 +12,10 @@ export class CoursesComponent implements OnInit {
   colspan = 2;
   isActive = true;
   imageUrl = 'http://lorempixel.com/400/200';
+  email = 'me@dbs.com';
+  message=`
+  The petition calls for the UK government to "put pressure on the Libyan government to take immediate action to stop these criminals from selling more people, to set current prisoners free, arrest the criminals and end this."
+  `
 
   constructor(coursesService: CoursesService) {
     this.courses = coursesService.getCourses();
@@ -29,6 +33,11 @@ export class CoursesComponent implements OnInit {
   onDivClick($event) {
     console.log($event);
     console.log('div clicked');
+  }
+  
+  onKeyUp() {
+      console.log(this.email);
+    
   }
 
 }
