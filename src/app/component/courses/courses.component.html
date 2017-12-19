@@ -1,0 +1,25 @@
+<p>
+  courses works! {{ title }}
+</p>
+
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>
+  List of courses
+</ng-template>
+<ng-template #noCourses>
+  No courses yet
+</ng-template>
+<br/>
+<img src="{{ imageUrl }}" />
+<img [src]="imageUrl" />
+<br/>
+<table>
+  <tr>
+    <td [attr.colspan]="colspan">text goes here</td>
+  </tr>
+</table>
+<div (click)="onDivClick($event)"><button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]=" isActive ? 'green':'white'" (click)="onSave($event)">Save</button></div>
