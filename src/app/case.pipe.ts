@@ -7,12 +7,14 @@ export class CasePipe implements PipeTransform {
 
   transform(value: string, args?: any): any {
     if (!value) return null;
-    let v = value.trim().toLowerCase().split(' ');
+    let v = value.trim().toLowerCase().split(new RegExp('\\s|\\W'));
     let r = '';
     let preposition = [
       "the",
       "of",
-      'to'
+      'to',
+      'on',
+      'for'
     ];
     for (let i = 0; i < v.length; i++) {
       if (i != 0 && preposition.includes(v[i])) {
@@ -20,7 +22,7 @@ export class CasePipe implements PipeTransform {
       } else {
         r = r.concat(v[i].charAt(0).toUpperCase() + v[i].slice(1)).concat(' ');
       }
-      console.log(r);
+      // console.log(r);
     }
     return r;
   }

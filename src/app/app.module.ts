@@ -9,6 +9,8 @@ import {CoursesService} from './service/courses.service';
 import { SummaryPipe } from './summary.pipe';
 import { StarsComponent } from './component/stars/stars.component';
 import { CasePipe } from './case.pipe';
+import { PanelComponent } from './component/panel/panel.component';
+import { LikeComponent } from './component/like/like.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { CasePipe } from './case.pipe';
     CoursesComponent,
     SummaryPipe,
     StarsComponent,
-    CasePipe
+    CasePipe,
+    PanelComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,

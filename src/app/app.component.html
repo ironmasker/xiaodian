@@ -1,3 +1,9 @@
 <h1>Angualar</h1>
 <app-courses></app-courses>
-<app-stars></app-stars>
+<app-stars [is-favorite]="post.isFavorite" (clicks)="onFavoriteChanged($event)"></app-stars>
+<span class="glyphicon glyphicon-user"></span> 
+<bootstrap-panel [body]="body">
+    <div class="heading">Heading</div>
+    <ng-container class="footer">Tail goes here</ng-container>
+</bootstrap-panel>
+<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked" (change)="onLikeChanged()"></app-like>

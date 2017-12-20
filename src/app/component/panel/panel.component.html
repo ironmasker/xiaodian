@@ -1,0 +1,11 @@
+<h1>ngContent &amp; ng-container</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ng-content select=".heading">
+    </ng-content>
+  </div>
+  <div class="panel-body">{{ body }}</div>
+  <div class="panel-footer">
+    <ng-content select=".footer"></ng-content>
+  </div>
+</div>
