@@ -19,6 +19,7 @@ import { ZippyComponent } from './component/zippy/zippy.component';
 import { ContactFormComponent } from './component/contact-form/contact-form.component';
 import { FormExerciseComponent } from './component/form-exercise/form-exercise.component';
 import { SignupFormComponent } from './component/signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SignupFormComponent } from './component/signup-form/signup-form.compone
     InputFormatComponent,
     ZippyComponent,
     ContactFormComponent,
-    FormExerciseComponent
+    FormExerciseComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
