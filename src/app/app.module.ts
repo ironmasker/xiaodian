@@ -11,6 +11,8 @@ import { StarsComponent } from './component/stars/stars.component';
 import { CasePipe } from './case.pipe';
 import { PanelComponent } from './component/panel/panel.component';
 import { LikeComponent } from './component/like/like.component';
+import { MapListComponent } from './component/map-list/map-list.component';
+import { NgforComponent } from './component/ngfor/ngfor.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { LikeComponent } from './component/like/like.component';
     StarsComponent,
     CasePipe,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    MapListComponent,
+    NgforComponent
   ],
   imports: [
     BrowserModule,
