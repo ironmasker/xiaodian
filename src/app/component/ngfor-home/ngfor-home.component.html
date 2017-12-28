@@ -1,0 +1,8 @@
+<h1>*ngFor &amp; trackBy</h1>
+<button (click)="addCourse()">Add Course</button>
+<button (click)="loadCourses()">Load Courses</button>
+<ul>
+  <li *ngFor="let course of courses; index as i; trackBy: trackCourse">
+   {{ i + " " + course.name }}
+  </li>
+</ul>

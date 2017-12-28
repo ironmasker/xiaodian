@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 
 
@@ -13,11 +13,21 @@ import { PanelComponent } from './component/panel/panel.component';
 import { LikeComponent } from './component/like/like.component';
 import { MapListComponent } from './component/map-list/map-list.component';
 import { NgforComponent } from './component/ngfor/ngfor.component';
+import { NgforHomeComponent } from './component/ngfor-home/ngfor-home.component';
+import { TaskComponent } from './component/task/task.component';
+import { InputFormatDirective } from './directive/input-format.directive';
+import { InputFormatComponent } from './component/input-format/input-format.component';
+import { ZippyComponent } from './component/zippy/zippy.component';
+import { ContactFormComponent } from './component/contact-form/contact-form.component';
+import { FormExerciseComponent } from './component/form-exercise/form-exercise.component';
+import { SignupFormComponent } from './component/signup-form/signup-form.component';
+import { NewCourseFormComponent } from './component/new-course-form/new-course-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    SignupFormComponent,
     CoursesComponent,
     SummaryPipe,
     StarsComponent,
@@ -25,11 +35,20 @@ import { NgforComponent } from './component/ngfor/ngfor.component';
     PanelComponent,
     LikeComponent,
     MapListComponent,
-    NgforComponent
+    NgforComponent,
+    NgforHomeComponent,
+    TaskComponent,
+    InputFormatDirective,
+    InputFormatComponent,
+    ZippyComponent,
+    ContactFormComponent,
+    FormExerciseComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CoursesService

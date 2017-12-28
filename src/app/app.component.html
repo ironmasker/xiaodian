@@ -3,9 +3,18 @@
 <app-stars [is-favorite]="post.isFavorite" (clicks)="onFavoriteChanged($event)"></app-stars>
 <span class="glyphicon glyphicon-user"></span> 
 <bootstrap-panel [body]="body">
-    <div class="heading">Heading</div>
-    <ng-container class="footer">Tail goes here</ng-container>
+    <div class="heading">Heading with ng-content and div</div>
+    <ng-container class="footer">Tail goes here with ng-content and ng-container</ng-container>
 </bootstrap-panel>
 <app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked" (change)="onLikeChanged()"></app-like>
 <app-map-list></app-map-list>
 <app-ngfor></app-ngfor>
+<app-ngfor-home></app-ngfor-home>
+<app-task></app-task>
+<app-input-format></app-input-format>
+<zippy title="Shipping Details">Shipping Details Content</zippy>
+<zippy title="Billing Details">Billing Details Content</zippy>
+<br/>
+<contact-form></contact-form>
+<form-exercise></form-exercise>
+<signup-form></signup-form>
