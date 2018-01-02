@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="oldPwd">Old Password</label>
+    <input formControlName="oldPwd" type="password" class="form-control" id="oldPwd">
+    <div class="alert alert-danger" *ngIf="oldPwd.touched && oldPwd.invalid">
+      <div *ngIf="oldPwd.errors.required">Old password is required</div>
+      <div *ngIf="oldPwd.errors.invalidOldPassword">Old password is invalid</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="newPwd">New Password</label>
+    <input formControlName="newPwd" type="password" class="form-control" id="newPwd">
+    <div class="alert alert-danger" *ngIf="newPwd.touched && newPwd.invalid">
+        <div *ngIf="newPwd.errors.required">New password is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="confPwd">Confirm Password</label>
+    <input formControlName="confPwd" type="password" class="form-control" id="confPwd">
+    <div class="alert alert-danger" *ngIf="confPwd.touched && confPwd.invalid">
+        <div *ngIf="confPwd.errors.required">Confirm password is required</div>
+    </div>
+    <div *ngIf="confPwd.valid && form.invalid && form.errors && form.errors.passwordsShouldMatch" class="alert alert-danger" >Passwords do not match</div>
+  </div>
+  <div>{{ form.errors | json }}</div>
+  <button class="btn btn-primary">Change Password</button>
+</form>

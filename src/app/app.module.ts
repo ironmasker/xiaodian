@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http'
 
 
 import { AppComponent } from './app.component';
@@ -22,6 +23,9 @@ import { ContactFormComponent } from './component/contact-form/contact-form.comp
 import { FormExerciseComponent } from './component/form-exercise/form-exercise.component';
 import { SignupFormComponent } from './component/signup-form/signup-form.component';
 import { NewCourseFormComponent } from './component/new-course-form/new-course-form.component';
+import { ReactiveFormExerciseComponent } from './component/reactive-form-exercise/reactive-form-exercise.component';
+import { PostsComponent } from './component/posts/posts.component';
+import { PostService } from './service/post.service';
 
 
 @NgModule({
@@ -43,15 +47,19 @@ import { NewCourseFormComponent } from './component/new-course-form/new-course-f
     ZippyComponent,
     ContactFormComponent,
     FormExerciseComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    ReactiveFormExerciseComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
