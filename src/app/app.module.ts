@@ -26,6 +26,8 @@ import { NewCourseFormComponent } from './component/new-course-form/new-course-f
 import { ReactiveFormExerciseComponent } from './component/reactive-form-exercise/reactive-form-exercise.component';
 import { PostsComponent } from './component/posts/posts.component';
 import { PostService } from './service/post.service';
+import { ErrorHandler } from '@angular/core';
+import { AppErrorHandler } from './exception/app-error-handler';
 
 
 @NgModule({
@@ -59,7 +61,10 @@ import { PostService } from './service/post.service';
   ],
   providers: [
     CoursesService,
-    PostService
+    PostService,
+    {
+      provide: ErrorHandler, useClass: AppErrorHandler
+    }
   ],
   bootstrap: [AppComponent]
 })
