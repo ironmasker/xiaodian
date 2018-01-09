@@ -17,10 +17,12 @@ export class PostsComponent implements OnInit {
   constructor(private postService : PostService) {}
 
   ngOnInit() {
-    this.postService.getPosts()
-    .subscribe(response=>{
-      this.posts = response.json();
-    }
+    this.postService.getAll()
+    .subscribe(
+      posts => this.posts = posts
+    //   response=>{
+    //   this.posts = response.json();
+    // }
     // , error => {
     //   alert("An unexpected error occurred.");
     //   console.log(error);
@@ -30,13 +32,20 @@ export class PostsComponent implements OnInit {
 
   createPost(input: HTMLInputElement) : void {
     let post = {title: input.value};
+    //optimistic
+    this.posts.splice(0, 0, post);
+
     input.value = '';
 
-    this.postService.createPost(post)
-    .subscribe((response)=>{
-      post['id'] = response.json().id;
-      this.posts.splice(0, 0, post);
+    this.postService.create(post)
+    .subscribe((newPost)=>{
+      post['id'] = newPost.id;
+      //pessimistic
+      // this.posts.splice(0, 0, post);
     }, (error : AppError) => {
+      //optimistics
+      this.posts.splice(0, 1);
+
       if (error instanceof BadRequestError) {
         // this.form.setErrors(error.originalError);
         console.log(error);
@@ -49,9 +58,9 @@ export class PostsComponent implements OnInit {
   }
 
   updatePost(post) {
-    this.postService.updatePost(post)
-    .subscribe((response)=> {
-      console.log(response.json());
+    this.postService.update(post)
+    .subscribe((updatedPost)=> {
+      console.log(updatedPost);
     }
     // , error => {
     //   alert("An unexpected error occurred.");
@@ -61,11 +70,14 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post) {
-    this.postService.deletePost(post.id)
-    .subscribe((response)=> {
-      let index = this.posts.indexOf(post);
-      this.posts.splice(index, 1);
-    }, (error : AppError) => {
+    let index = this.posts.indexOf(post);
+    this.posts.splice(index, 1);
+
+    this.postService.delete(post.id)
+    .subscribe(
+      /*()=> {
+      }*/null, (error : AppError) => {
+      this.posts.splice(index, 0, post);
       if (error instanceof NotFoundError) {
         alert("This post has already been deleted.");
       } else {

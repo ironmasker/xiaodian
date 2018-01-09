@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http'
-
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './component/courses/courses.component';
@@ -28,6 +28,12 @@ import { PostsComponent } from './component/posts/posts.component';
 import { PostService } from './service/post.service';
 import { ErrorHandler } from '@angular/core';
 import { AppErrorHandler } from './exception/app-error-handler';
+import { GithubFollowersComponent } from './component/github-followers/github-followers.component';
+import { GithubFollowersService } from './service/github-followers.service';
+import { HomeComponent } from './component/home/home.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+import { GithubProfileComponent } from './component/github-profile/github-profile.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 
 @NgModule({
@@ -51,17 +57,30 @@ import { AppErrorHandler } from './exception/app-error-handler';
     FormExerciseComponent,
     NewCourseFormComponent,
     ReactiveFormExerciseComponent,
-    PostsComponent
+    PostsComponent,
+    GithubFollowersComponent,
+    HomeComponent,
+    NotFoundComponent,
+    GithubProfileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path:'', component: HomeComponent },
+      { path:'followers/:username', component: GithubProfileComponent },
+      { path:'followers', component: GithubFollowersComponent },
+      { path:'posts', component: PostsComponent },
+      { path:'**', component: NotFoundComponent }
+    ])
   ],
   providers: [
     CoursesService,
     PostService,
+    GithubFollowersService,
     {
       provide: ErrorHandler, useClass: AppErrorHandler
     }
