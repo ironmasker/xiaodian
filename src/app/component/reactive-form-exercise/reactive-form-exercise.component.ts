@@ -15,7 +15,7 @@ export class ReactiveFormExerciseComponent implements OnInit {
     newPwd: new FormControl('', Validators.required),
     confPwd: new FormControl('', Validators.required)
   },
-  PasswordValidators.passwordShouldMatch
+  PasswordValidators.passwordShouldMatch, 
   );
 
   constructor() { }
