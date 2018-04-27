@@ -1,0 +1,2 @@
+S3 versioning is for accidental delete or overwrite.
+S3 MFA Delete is to add second level of security for Bucket Versioning status change or deletion of object version.

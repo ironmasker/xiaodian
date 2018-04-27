@@ -1,0 +1,12 @@
+http://www.briefmenow.org/amazon/category/exam-aws-saa-update-july-14th-2017/page/2/
+https://www.udemy.com/aws-solution-architect-associate/?couponCode=AWSSOL50
+
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.DataConsistency.html
+http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html#edge-to-edge-vgw
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScanGuidelines.html
+
+http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html --> Using Web Identity Federation APIs for Mobile Apps
+https://web-identity-federation-playground.s3.amazonaws.com/index.html
+
+https://acloud.guru/forums/aws-certified-developer-associate/discussion/-KUdI5f2LNbi4wvK7v4I/how_to_pass_aws_certified_deve

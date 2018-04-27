@@ -1,0 +1,591 @@
+﻿Deploymen Models
+An all-in cloud-based application is fully deployed in the cloud, with all components of the application running in the cloud.
+A hybrid deployment is a common approach taken by many enterprises that connects infrastructure and applications between cloud-based resources and existing resources, typically in an existing data center.
+
+Advantages
+Capacity exactly matches your need, you pay only for what you use, economies of scale result in lower costs, and the service is provided by a vendor experienced in running large-scale networks.
+
+Region
+Each region is a separate geographic area.
+
+Availability Zone
+Each region has multiple, isolated locations known as Availability Zones. AWS enables the placement of resources and data in multiple locations. Resources aren’t replicated across regions unless organizations choose to do so.
+Each Availability Zone is also isolated, but the Availability Zones in a region are connected through low-latency links.
+
+AWS Lambda
+AWS Lambda runs your back-end code on its own AWS compute fleet of Amazon
+EC2 instances across multiple Availability Zones in a region, which provides the high
+availability, security, performance, and scalability of the AWS infrastructure.
+
+AWS Elastic Beanstalk
+Developers can simply upload their application code, and the service
+automatically handles all the details, such as resource provisioning, load balancing, Auto
+Scaling, and monitoring.
+
+Amazon VPC
+Amazon Virtual Private Cloud (Amazon VPC) lets organizations provision a logically isolated
+section of the AWS Cloud where they can launch AWS resources in a virtual network that
+they define.
+
+AWS Direct Connect
+AWS Direct Connect allows organizations to establish a dedicated network connection from
+their data center to AWS.
+
+AWS Route 53
+Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+Amazon Route 53 also serves as domain registrar, allowing you to
+purchase and manage domains directly from AWS.
+
+AWS Simple Storage Service
+Amazon S3 provides cost-effective object storage for a wide
+variety of use cases, including backup and recovery, nearline archive, big data analytics,
+disaster recovery, cloud applications, and content distribution.
+
+AWS Glacier
+Amazon Glacier is a secure, durable, and extremely low-cost storage service for data
+archiving and long-term backup.
+
+AWS Elastic Block Store
+Each Amazon EBS volume is automatically replicated
+within its Availability Zone to protect organizations from component failure, offering high
+availability and durability.
+
+AWS Storage Gateway
+File Gateway
+You can now store and retrieve files directly using NFS 3 or 4.1 protocol.
+You can access your data directly in S3 from any cloud application or service.
+You can manage your data directly in Amazon S3 using lifecycle policies, cross-region replication, and versioning.
+	We refer to this new capability as file gateway. You can think of this as an NFS mount on S3.
+
+Volume Gateway – Volume gateway provides cloud-backed storage volumes that you can mount as Internet Small 
+					Computer System Interface (iSCSI) devices from your on-premises application servers.
+	Cached Volumes - You store your data in Amazon Simple Storage Service (Amazon S3) and retain a copy of frequently
+					accessed data subsets locally. 
+	Stored Volumes - If you need low-latency access to your entire data set, you can configure your on-premises 
+					gateway to store all your data locally and then asynchronously back up point-in-time snapshots of 
+					this data to Amazon S3. This configuration provides durable and inexpensive off-site backups that 
+					you can recover to your local data center or Amazon EC2.
+
+Tape Gateway
+You can cost-effectively and durably archive backup data in Amazon Glacier.	
+
+Amazon CloudFront
+distribute content to users across the world with low latency, high data transfer speeds, and no minimum usage commitments.	
+	
+RDS
+Amazon RDS manages time-consuming administration tasks, including backups, software patching, monitoring, scaling,
+and replication, organizational resources can focus on revenue-generating applications and business instead of 
+mundane operational tasks.
+
+DynamoDB
+It is a fully managed database and supports both document and key/value data models.
+
+Redshift
+petabyte-scale data warehouse service
+provides a standard SQL interface
+columnar storage technology that improves I/O efficiency and parallelizing queries across multiple nodes
+
+ElastiCache
+in-memory cache in the cloud
+supports Memcached and Redis cache engines
+
+CloudWatch
+a monitoring service for AWS Cloud resources and the applications running on AWS
+
+CloudFormation
+create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
+defines a JSON-based templating language that can be used to describe all the AWS resources that are necessary for a workload
+
+CloudTrail
+that records AWS API calls for an account and delivers log files for audit and review.
+
+AWS Config
+provides organizations with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance
+
+IAM
+enables organizations to securely control access to AWS Cloud services and resources for their users.
+
+KMS
+for organizations to create and control the encryption keys used to encrypt their data
+uses Hardware Security Modules (HSMs) to protect the security of your keys
+
+Directory Service
+to set up and run Microsoft Active Directory on the AWS Cloud or connect their AWS resources with an existing on-premises Microsoft Active Directory
+
+AWS Certificate Manager
+provision, manage, and deploy Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates
+
+AWS Web Application Firewall
+AWS WAF is a web application firewall service that helps protect your web apps from common exploits that could affect app availability, compromise security, or consume excessive resources.
+
+API Gateway
+for developers to create, publish, maintain, monitor, and secure APIs at any scale
+
+Amazon Elastic Transcoder
+convert (or transcode) media files from their source formats into versions that will play back on devices like smart phones, tablets, and PCs
+
+Simple Notification Service
+coordinates and manages the delivery or sending of messages to recipients
+
+Simple Email Service
+to send transactional email, marketing messages, or any other type of content to their customers
+Amazon SES can also be used to receive messages and deliver
+them to an Amazon S3 bucket, call custom code via an AWS Lambda function, or publish
+notifications to Amazon SNS.
+
+Simple Workflow Service
+helps developers build, run, and scale background jobs that have parallel or sequential steps.
+Amazon SWF can be thought of as a fully managed state tracker and task coordinator on the cloud.
+
+Simple Queue Service
+message queuing service that decouples the components of a cloud application
+organizations can transmit any
+volume of data, at any level of throughput, without losing messages or requiring other
+services to be always available
+
+
+S3
+
+Block/File Storage vs S3 Object Storage
+
+Block and file storage are often accessed over a network in the form of a Storage Area Network (SAN) for
+block storage, using protocols such as iSCSI or Fibre Channel, or as a Network Attached
+Storage (NAS) file server or “filer” for file storage, using protocols such as Common Internet
+File System (CIFS) or Network File System (NFS). Whether directly-attached or network-attached,
+block or file, this kind of storage is very closely associated with the server and the
+operating system that is using the storage.
+
+Amazon S3 object storage is something quite different. Amazon S3 is cloud object storage.
+Instead of being closely associated with a server, Amazon S3 storage is independent of a
+server and is accessed over the Internet. Instead of managing data as blocks or files using
+SCSI, CIFS, or NFS protocols, data is managed as objects using an Application Program
+Interface (API) built on standard HTTP verbs.
+
+The Amazon EBS service provides block level storage for Amazon
+Elastic Compute Cloud (Amazon EC2) instances. Amazon Elastic File System (AWS EFS)
+provides network-attached shared file storage (NAS storage) using the NFS v4 protocol.
+
+Bucket
+Bucket names can contain up to 63 lowercase letters, numbers, hyphens, and periods
+you can have up to 100 per account by default
+It is a best practice to use bucket names that contain your domain name and
+conform to the rules for DNS names. This ensures that your bucket names are your own,
+can be used in all regions, and can host static websites.
+
+Objects
+Each object consists of data (the file itself) and metadata (data about the file).
+
+Keys
+A key can be up to 1024 bytes of Unicode UTF-8 characters, including embedded slashes, backslashes, dots, and dashes
+The combination of bucket, key, and optional version ID uniquely identifies an Amazon S3 object.
+
+For convenience, the Amazon S3 console and the Prefix and Delimiter feature
+allow you to navigate within an Amazon S3 bucket as if there were a folder hierarchy.
+However, remember that a bucket is a single flat namespace of keys with no structure.
+
+Amazon S3 standard storage is designed for 99.999999999% durability and 99.99% availability of objects over a given year
+It is designed to sustain the concurrent loss of data in two facilities without loss of user data.
+
+Redundancy Storage (RRS) at a lower cost. RRS offers 99.99% durability with a lower cost of
+storage than traditional Amazon S3 storage.
+
+Even though Amazon S3 storage offers very high durability at the infrastructure
+level, it is still a best practice to protect against user-level accidental deletion or
+overwriting of data by using additional features such as versioning, cross-region
+replication, and MFA Delete.
+
+Data Consistency
+Amazon S3 is an eventually consistent system. there are some situations where information
+that you read immediately after an update may return stale data.
+For PUTs to new objects, Amazon S3 provides read-after-write
+consistency. However, for PUTs to existing objects (object overwrite to an existing key)
+and for object DELETEs, Amazon S3 provides eventual consistency. In all cases, updates to a single key are atomic—for
+eventually-consistent reads, you will get the new data or the old data, but never an
+inconsistent mix of data.
+
+Access Control
+coarse-grained access controls (Amazon S3 Access Control Lists [ACLs])
+and fine-grained access controls (Amazon S3 bucket policies, AWS Identity and Access Management [IAM] policies, and query-string authentication)
+
+Subtle difference between S3 Bucket Policy and IAM Policy
+They are associated with the bucket resource instead of an IAM principal.
+They include an explicit reference to the IAM principal in the policy. This principal can be associated with a different AWS account, so Amazon S3 bucket policies allow you to assign cross-account access to Amazon S3 resources.
+
+
+
+
+Amazon RDS provides two mechanisms for backing up the database: automated backups and manual snapshots.
+
+Recovery Point Objective (RPO) in minutes: as the maximum period of data loss that is acceptable
+Recovery Time Objective (RTO) in hours or even days : as the maximum amount of downtime that is permitted to recover from backup
+
+automated backup: Amazon RDS creates a storage volume snapshot of your DB Instance, backing up the entire DB Instance and not just individual databases
+default is 1 day, up to max 35 days. Keep in mind that when you delete a DB Instance, all automated backup snapshots are deleted and cannot be recovered
+
+manual DB snapshots: is initiated by you and can be created as frequently as you want
+
+For busy databases, use Multi-AZ to minimize the performance impact of a snapshot.
+During the backup window, storage I/O may be suspended while your data is being
+backed up, and you may experience elevated latency. This I/O suspension typically lasts
+for the duration of the snapshot. This period of I/O suspension is shorter for Multi-AZ
+DB deployments because the backup is taken from the standby, but latency can occur
+during the backup process.
+
+You cannot restore from a DB snapshot to an existing DB Instance; a new DB Instance is created when you restore. As soon as the restore is complete, you should associate any custom DB parameter or security groups used by the instance from which you restored
+
+When using automated backups, Amazon RDS combines the daily backups performed during your predefined
+maintenance window in conjunction with transaction logs to enable you to restore your DB
+Instance to any point during your retention period, typically up to the last five minutes
+
+Multi-AZ deployments
+allows you to create a database cluster across multiple Availability Zones. Amazon RDS can increase the availability of your database using replication
+Multi-AZ lets you meet the most demanding RPO and RTO targets
+by using synchronous replication to minimize RPO and fast failover to minimize RTO to
+minutes.
+When you create a Multi-AZ DB Instance, a primary instance is
+created in one Availability Zone and a secondary instance is created in another Availability
+Zone. Amazon RDS will automatically fail over to the standby instance without user intervention.
+The DNS name remains the same, but the Amazon RDS service changes the CNAME to point
+to the standby. 
+
+Multi-AZ deployments are for disaster recovery
+only; they are not meant to enhance database performance
+
+Scale up (vertical)
+Adding additional compute, memory, or storage resources to your database by selecting a different DB Instance class
+of the database
+Storage expansion is supported for all of the database engines except for SQL Server. Each database instance can scale from 5GB up to 6TB in
+provisioned storage depending on the storage type and engine
+
+Partitioning, or sharding, allows you to scale horizontally to handle more users and requests
+but requires additional logic in the application layer. NoSQL databases like Amazon DynamoDB or
+Cassandra are designed to scale horizontally.
+
+Another important scaling technique is to use read replicas to offload read transactions from
+the primary database and increase the overall number of transactions.
+Read replicas are currently supported in Amazon RDS for MySQL, PostgreSQL, MariaDB, and
+Amazon Aurora. Amazon RDS uses the MySQL, MariaDB, and PostgreSQL DB engines’ builtin
+replication functionality to create a special type of DB Instance, called a read replica, from
+a source DB Instance. Updates made to the source DB Instance are asynchronously copied to
+the read replica.
+
+You can create one or more replicas of a database within a single AWS Region or
+across multiple AWS Regions
+
+Security
+IAM Policy
+best practice is to deploy your Amazon RDS DB Instances into a private
+subnet within an Amazon Virtual Private Cloud (Amazon VPC) that limits network access to
+the DB Instance by using NACL and Security Group.
+At the database level, you will also need to create users and grant them permissions to read
+and write to your databases
+Finally, protect the confidentiality of your data in transit and at rest with multiple encryption
+capabilities provided with Amazon RDS.
+
+All logs, backups, and snapshots are encrypted for an encrypted Amazon RDS instance.
+
+Amazon Redshift
+petabyte-scale data warehouse service
+Amazon Redshift is a relational database designed for OLAP scenarios and
+optimized for high-performance analysis and reporting of very large datasets.
+Amazon Redshift gives you fast querying capabilities over structured data using standard SQL
+commands to support interactive querying over large datasets, via OCBC or JDBC.
+
+Clusters and Nodes
+Amazon Redshift data warehouse is a cluster. A cluster is composed of a leader node and one or more compute nodes; User data for each table is distributed across the compute nodes.
+The client application interacts directly only with the leader node, and the compute nodes are transparent to external applications
+
+support for six different node types and each has a different mix of CPU, memory, and storage
+Dense Compute : support clusters up to 326TB using fast SSDs
+Dense Storage : support clusters up to 2PB using large magnetic disks
+
+
+
+CloudFront Use Cases
+
+Serving the Static Assets of Popular Websites
+Static assets such as images, CSS, and JavaScript traditionally make up the bulk of requests to typical websites
+
+Serving a Whole Website or Web Application
+both dynamic and static content by using multiple origins, cache behaviors, and short TTLs for dynamic content
+
+Distributing Software or Other Large Files
+will help speed up the download of these files to end users
+
+Serving Streaming Media
+
+Not benefit from CloudFront cases
+All or Most Requests Come From a Single Location
+All or Most Requests Come Through a Corporate VPN
+
+AWS Storage Gateway
+is available for download as a Virtual Machine (VM) image that you install on a host in your data center
+
+Gateway-Cached volumes : recently read data is retained in local storage to provide low-latency access,
+While each volume is limited to a maximum size of 32TB, a single gateway can support up to
+32 volumes for a maximum storage of 1 PB.
+
+Gateway-Stored volumes : allow you to store your data on your
+on-premises storage and asynchronously back up that data to Amazon S3, in the form of ELB.
+While each volume is limited to a maximum size of 16TB, a single
+gateway can support up to 32 volumes for a maximum storage of 512TB
+
+Gateway-Virtual Tape Libraries (VTL) : lets you leverage your
+existing tape-based backup application infrastructure to store data on virtual tape cartridges
+that you create on your Gateway-VTL up to 1,500 tapes (1 PB) of total tape data
+
+AWS Directory Service : each directory is deployed across multiple Availability Zones, and monitoring automatically detects
+and replaces domain controllers that fail. And data replication and automated daily
+snapshots are configured for you.
+
+Microsoft AD : more than 5,000 users and need a trust
+relationship set up between an AWS-hosted directory and your on-premises directories
+
+Simple AD : the least expensive option if have 5,000 or fewer users and don’t need the more advanced Microsoft Active Directory
+features
+
+AD Connector : is a proxy service for connecting your on-premises Microsoft
+Active Directory to the AWS cloud without requiring complex directory synchronization or
+the cost and complexity of hosting a federation infrastructure
+
+AWS Key Management Service
+AWS KMS : lets you create keys that can never be exported from the service and that can be used to
+encrypt and decrypt data based on policies you define
+
+Customer Managed Keys : encrypt/decrypt up to 4 KB of data directly inside of AWS KMS. encrypt/decrypt data keys that are then
+used to encrypt/decrypt large amount of data outside of the service. Can never leave AWS KMS unencrypted.
+
+Date Keys : use data keys to encrypt large data objects within your own application outside AWS KMS.
+
+Envelope Encryption : You use the plain text key to encrypt data and store the encrypted key alongside the encrypted data
+You can retrieve a plain text data key only if you have the encrypted
+data key and you have permission to use the corresponding master key
+
+Encryption Context : optional key/value map of additional contextual information. The
+specified context must be the same for both the encrypt and decrypt operations or
+decryption will not succeed
+
+AWS CloudHSM : An HSM is a hardware appliance that provides secure key storage and
+cryptographic operations within a tamper-resistant hardware module
+
+AWS CloudTrail
+provides visibility into user activity by recording API calls made on your account. including the
+name of the API, the identity of the caller, the time of the API call, the request parameters,
+and the response elements returned by the AWS service
+
+A trail is a configuration that enables logging of the AWS API activity and related events
+in your account
+
+You can create two types of trails:
+A Trail That Applies to All Regions : default.
+A Trail That Applies to One Region
+
+AWS CloudTrail typically delivers log files within 15 minutes of an API call
+External Compliance Audits
+Unauthorized Access to Your AWS Account : records all sign-on attempts to your AWS account
+
+Amazon Kinesis
+Amazon Kinesis Firehose: A service enabling you to load massive volumes of streaming data into AWS
+Amazon Kinesis Streams: A service enabling you to build custom applications for more complex analysis of streaming data in real time
+Amazon Kinesis Analytics: A service enabling you to easily analyse streaming data real time with standard SQL
+
+Data Ingestion
+Real-Time Processing of Massive Data Streams : Amazon Kinesis is ideally suited for ingesting and
+processing streams of data, it is less appropriate for batch jobs such as nightly Extract,
+Transform, Load (ETL) processes
+
+Amazon Elastic MapReduce
+provides you with a fully managed, on-demand Hadoop framework
+
+The instance type of the nodes in your cluster
+The number of nodes in your cluster
+The version of Hadoop you want to run
+Additional tools or applications like Hive, Pig, Spark, or Presto
+
+two types of storage
+Hadoop Distributed File System (HDFS) : Amazon EMR can use Amazon EC2 instance storage or Amazon EBS for HDFS
+EMR File System (EMRFS) : is an implementation of HDFS that allows clusters to store data on Amazon S3. 
+
+Clusters that are started when needed and then immediately stopped when done are called transient clusters.
+EMRFS is the choice.
+
+Persistent clusters are appropriate when continuous analysis is going to be run on the data. For persistent 
+clusters, HDFS is a common choice
+
+Log Processing
+Clickstream Analysis
+Genomics and Life Sciences
+
+AWS Data Pipeline
+can be used for virtually any batch mode ETL process.
+
+A pipeline schedules and runs tasks according to the pipeline definition. Data nodes are locations where the
+pipeline reads input data or writes output data.
+
+AWS Import/Export
+AWS Import/Export Snowball : Amazon-provided shippable storage appliances, 50TB and 80TB. on-premises <--> S3
+AWS Import/Export Disk : Amazon high-speed internal network, upper limit of 16TB. In Amazon Glacier, EBS, S3, out S3.
+
+Storage Migration
+Migrating Applications
+
+AWS OpsWorks
+configuration management service that helps you configure and operate applications using Chef
+
+The stack is the core AWS OpsWorks component. It is basically a container for AWS
+resources that have a common purpose and make sense to be logically managed together
+
+You define the elements of a stack by adding one or more layers. A layer represents a set of
+resources that serve a particular purpose, such as load balancing, web applications, or hosting
+a database server
+
+Layers depend on Chef recipes to handle tasks such as installing packages on instances, deploying applications, and running scripts.
+
+You store applications and related files in a repository, such as an Amazon S3 bucket or Git repo.
+Each application is represented by an app, which specifies the application type and
+contains the information that is needed to deploy the application from the repository to your
+instances, such as the repository URL and password.
+
+Using the concepts of stacks, layers, and apps, you can model and visualize your
+application and resources in an organized fashion.
+
+Host Multi-Tier Web Applications
+Support Continuous Integration : Everything in your environment can be automated
+
+AWS CloudFormation
+gives developers and systems administrators an easy way to create and
+manage a collection of related AWS resources, provisioning and updating them in an orderly
+and predictable fashion. When you use AWS CloudFormation, you work with templates and
+stacks.
+
+You manage related resources as a single unit called a stack. You create, update, and delete a collection of resources by creating, updating, and
+deleting stacks.
+
+By leveraging template parameters, you can use a
+single template for many infrastructure deployments with different configuration values
+
+There is no need to create a new stack and delete the old one; you can simply modify the existing stack’s template
+
+If you want to delete a stack but still retain some resources in that stack, you
+can use a deletion policy to retain those resources.
+
+Quickly Launch New Test Environments
+Reliably Replicate Configuration Between Environments
+Launch Applications in New AWS Regions
+
+AWS Elastic Beanstalk
+An AWS Elastic Beanstalk application is the logical collection of these AWS Elastic Beanstalk components,
+which includes environments, versions, and environment configurations. In AWS Elastic Beanstalk, an application is conceptually similar to a folder.
+
+An application version refers to a specific, labeled iteration of deployable code for a web
+application.
+
+An environment is an application version that is deployed onto AWS resources
+
+An environment configuration identifies a collection of parameters and settings that define
+how an environment and its associated resources behave.
+
+An environment tier whose web application processes web requests is known as a web server
+tier. An environment tier whose application runs background jobs is known as a worker tier
+
+AWS Trusted Advisor
+AWS Trusted Advisor inspects your AWS
+environment and makes recommendations when opportunities exist to save money, improve
+system availability and performance, or help close security gaps
+
+cost optimization, security, fault tolerance, and performance improvement
+
+AWS Config
+With AWS Config, you can discover existing and deleted AWS resources,
+determine your overall compliance against rules, and dive into configuration details of a
+resource at any point in time.
+
+A configuration item
+represents a point-in-time view of the various attributes of a supported AWS resource that
+exists in your account
+
+An AWS Config Rule
+represents desired configuration settings for specific AWS resources or for an entire AWS
+account.
+
+Discovery
+Change Management
+Continuous Audit and Compliance : AWS Config and AWS Config Rules
+Troubleshooting
+Security and Incident Analysis
+
+Key Features
+If the configuration change
+of a resource was the result of an API call, AWS Config also records the AWS CloudTrail event
+ID that corresponds to the API call that changed the resource’s configuration
+
+BCE
+AC
+CE
+B
+C 
+B
+C 
+D 
+A 
+Bc 
+B 
+C 
+D 
+C
+B 
+C 
+A 
+B 
+A 
+D 
+
+The AWS global infrastructure includes
+the facilities, network, hardware, and operational software (for example, host operating
+system and virtualization software) that support the provisioning and use of these resources
+
+You should architect your AWS usage to take advantage of multiple regions and
+Availability Zones. Distributing applications across multiple Availability Zones provides
+the ability to remain resilient in the face of most failure modes, including natural
+disasters or system failures.
+
+You do this by adding an MFA
+requirement to an IAM access policy. You can attach these access policies to IAM users, IAM
+groups, or resources that support ACLs like Amazon S3 buckets, Amazon Simple Queue
+Service (Amazon SQS) queues, and Amazon Simple Notification Service (Amazon SNS)
+topics.
+
+AWS requires that all API requests be signed by the SAK. A request must reach AWS within 15 minutes of the timestamp in the request. Otherwise,
+AWS denies the request
+
+the AWS firewall resides within the hypervisor layer, between the physical network interface and the instance’s
+virtual interface.
+
+Amazon EBS
+replication is stored within the same Availability Zone, not across multiple zones
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
